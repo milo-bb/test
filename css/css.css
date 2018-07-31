@@ -38,3 +38,13 @@ header{
     margin-left:20%;
     overflow:hidden;
 }
+
+header h1{
+  font-size:120%;/*フォントサイズ調整*/
+  color:#313131;/*文字色変更*/
+  padding-top:10px; /*文字上部に余白*/
+  padding-bottom:10px; /*文字下部に余白*/
+  padding-left:20px; /*文字左側に余白*/
+  padding-right:20px; /*文字右側に余白*/
+  margin-top:20px;/*ロゴ上部に余白*/
+}
