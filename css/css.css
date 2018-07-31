@@ -14,6 +14,27 @@ img{
 a{
   color:blue;
   -webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	transition: all 0.5s;
+　-moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+a:visited{
+   color:blue;
+   -webkit-transition:all 0.5s;
+   -moz-transition: all 0.5s;
+   transition: all 0.5s;
+}
+
+a:hover{
+   color:#F5A862;
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   transition: all 0.5s;
+}
+
+header{
+    display:block;
+    width:60%;
+    margin-left:20%;
+    overflow:hidden;
 }
