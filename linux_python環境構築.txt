@@ -1,0 +1,54 @@
+virtualBoxをダウンロードとインストール
+https://www.virtualBox.org/
+
+vagrantをダウンロードとインストール
+https://www/vagrantup.com/
+
+> vagrant init bento/ubuntu-18.04
+> vagrant up
+
+tera termでLinix接続
+127.0.0.1:2222
+vagrant
+vagrant
+
+必要なライブラリインストール
+vagrant@vagrant:~$ sudo apt-get update
+vagrant@vagrant:~$ sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+
+pyenvインストール
+vagrant@vagrant:~$ git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+vagrant@vagrant:~$ echo 'export PYENV_ROOT="${HOME}/.pyenv"' >> ~/.bashrc
+vagrant@vagrant:~$ echo 'if [ -d "${PYENV_ROOT}" ]; then' >> ~/.bashrc
+vagrant@vagrant:~$ echo 'export PATH=${PYENV_ROOT}/bin:$PATH' >> ~/.bashrc
+vagrant@vagrant:~$ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+vagrant@vagrant:~$ echo 'fi' >> ~/.bashrc
+vagrant@vagrant:~$ source ~/.bashrc
+
+pyenvを利用してAnacondaをインストール
+vagrant@vagrant:~$ pyenv install anaconda3-5.2.0
+vagrant@vagrant:~$ pyenv global anaconda3-5.2.0
+
+pipバージョンアップ
+vagrant@vagrant:~$ pip install --upgrade pip
+
+
+タイムゾーン変更
+https://qiita.com/azusanakano/items/b39bd22504313884a7c3
+
+
+postgresqlインストール
+sudo apt-get install curl ca-certificates
+curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+sudo apt-get update
+sudo apt-get install postgresql-11 pgadmin4
+
+接続確認
+sudo -u postgres -i
+createuser -d -U postgres -P anonymous
+createdb vagrant --encoding=UTF-8 --lc-collate= en_US.UTF-8  --lc-ctype=en_US.UTF-8 --owner=vagrant --template=template0
+
+psql -U vagrant -h locahost -d vagrant
