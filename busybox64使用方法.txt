@@ -1,0 +1,7 @@
+①busybox64.exe　コマンドを確認する
+PS>.\busybox64.exe
+
+②busybox のコマンドを任意のフォルダに展開する
+PS> .\busybox --install E:\test-busybox
+
+③システム環境変数のパスに展開したフォルダを追加する
