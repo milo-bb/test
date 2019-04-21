@@ -1,4 +1,4 @@
---業務日時
+--日時
 \set :dtsys
 --出力ファイル名
 \set file count_ :dtsys .tsv
