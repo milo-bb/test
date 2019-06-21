@@ -1,0 +1,69 @@
+java ファイル読込について
+
+puclic class FileLogic {
+    // 項目名定義
+    private static final String[] IF_COLS = {
+     ID,
+     NAME
+    };
+    
+    public static void main(String[] args) {
+        // インターフェース項目をDataTableに列挙
+        List<String> fileInf = new ArrayList<String>();
+        for (int i = 0; i < IF_COLS.length; i++) {
+            fileInf.add(IF_COLS[i]);
+        }
+        
+        // datatableを生成
+        DataTable infTable = new DataTable(fileInf);
+        
+        // ファイル読込
+        FileInputStream input = null;
+        InputStreamReader stream = null;
+        BufferedReader buffer = null;
+        
+        try {
+            File file = new File(fileNmStr);
+            input = new FileInputStream(file);
+            stream = new InputStreamReader(input, "UTF8");
+            buffer = new BufferedReader(stream);
+            
+            String line;
+            
+            while ((line = buffer.readLine()) != null) {
+                String[] columns = line.split("\t", -1);
+                
+                // 項目数チェック
+                if (columns.length != IF_COLS.length) {
+                  System.out.println("項目数合わない")
+                  return;
+                }
+                
+                DataRow newRow = infTable.newRow();
+                for (int j = 0; j < IF_COLS.length; j++) {
+                   newRow.put(IF_COLS[j], columns[j]);
+                }
+                
+                // newRowには、ファイルのデータが入っているので、操作していきます。
+            }
+        } catch (Exception e) {
+            throw new Exception(e);
+        } finally {
+            try {
+                if (input != null) {
+                    input.close();
+                }
+                if (stream != null) {
+                    stream.close();
+                }
+                if (buffer != null) {
+                    buffer.close();
+                }
+             } catch (Exception e) {
+                 // ログ出力
+                System.out.println("コネクションのクローズでエラー発生しました。");
+        
+             }
+        }
+    }
+}
