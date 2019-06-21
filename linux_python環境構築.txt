@@ -1,22 +1,22 @@
-virtualBox‚ğƒ_ƒEƒ“ƒ[ƒh‚ÆƒCƒ“ƒXƒg[ƒ‹
+virtualBoxã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã¨ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 https://www.virtualBox.org/
 
-vagrant‚ğƒ_ƒEƒ“ƒ[ƒh‚ÆƒCƒ“ƒXƒg[ƒ‹
+vagrantã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã¨ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 https://www/vagrantup.com/
 
 > vagrant init bento/ubuntu-18.04
 > vagrant up
 
-tera term‚ÅLinixÚ‘±
+tera termã§Linuxæ¥ç¶š
 127.0.0.1:2222
 vagrant
 vagrant
 
-•K—v‚Èƒ‰ƒCƒuƒ‰ƒŠƒCƒ“ƒXƒg[ƒ‹
+å¿…è¦ãªãƒ©ã‚¤ãƒ–ãƒ©ãƒªã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 vagrant@vagrant:~$ sudo apt-get update
 vagrant@vagrant:~$ sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
 
-pyenvƒCƒ“ƒXƒg[ƒ‹
+pyenvã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 vagrant@vagrant:~$ git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 vagrant@vagrant:~$ echo 'export PYENV_ROOT="${HOME}/.pyenv"' >> ~/.bashrc
 vagrant@vagrant:~$ echo 'if [ -d "${PYENV_ROOT}" ]; then' >> ~/.bashrc
@@ -25,19 +25,19 @@ vagrant@vagrant:~$ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 vagrant@vagrant:~$ echo 'fi' >> ~/.bashrc
 vagrant@vagrant:~$ source ~/.bashrc
 
-pyenv‚ğ—˜—p‚µ‚ÄAnaconda‚ğƒCƒ“ƒXƒg[ƒ‹
+pyenvã‚’åˆ©ç”¨ã—ã¦Anacondaã‚’ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 vagrant@vagrant:~$ pyenv install anaconda3-5.2.0
 vagrant@vagrant:~$ pyenv global anaconda3-5.2.0
 
-pipƒo[ƒWƒ‡ƒ“ƒAƒbƒv
+pipãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚¢ãƒƒãƒ—
 vagrant@vagrant:~$ pip install --upgrade pip
 
 
-ƒ^ƒCƒ€ƒ][ƒ“•ÏX
+ã‚¿ã‚¤ãƒ ã‚¾ãƒ¼ãƒ³å¤‰æ›´
 https://qiita.com/azusanakano/items/b39bd22504313884a7c3
 
 
-postgresqlƒCƒ“ƒXƒg[ƒ‹
+postgresqlã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 sudo apt-get install curl ca-certificates
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
@@ -46,9 +46,12 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs
 sudo apt-get update
 sudo apt-get install postgresql-11 pgadmin4
 
-Ú‘±Šm”F
+æ¥ç¶šç¢ºèª
 sudo -u postgres -i
 createuser -d -U postgres -P anonymous
 createdb vagrant --encoding=UTF-8 --lc-collate= en_US.UTF-8  --lc-ctype=en_US.UTF-8 --owner=vagrant --template=template0
 
 psql -U vagrant -h locahost -d vagrant
+
+vagrantã‚·ãƒ£ãƒƒãƒˆãƒ€ã‚¦ãƒ³
+> vagrant halt
