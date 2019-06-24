@@ -1,0 +1,23 @@
+postgre dumpファイルについて
+
+■ファイルDUMP
+スキーマ情報のみ
+pg_dump -U ユーザー名 --format=custom --schema=スキーマ名 --schema-only -T 'テーブル名' データベース名 -v > DUMPファイル名
+
+一致するテーブルと一部テーブル名除外対応
+pg_dump -U ユーザー名 --format=custom --schema=スキーマ名 -t "テーブル名" -T "テーブル名" データベース名 -v > DUMPファイル名
+
+一部テーブル名除外対応
+pg_dump -U ユーザー名 --format=custom --schema=スキーマ名 データベース名 -T '(テーブル名|テーブル名)*' -v > DUMPファイル名
+
+
+■リストファイル作成
+pg_restore -l DUMPファイル名 > リストファイル名
+
+
+■ファイル分割
+/usr/bin/split -b 2000m -d DUMPファイル名 分割後ファイル名 --verbose
+
+
+■ファイル結合
+cat 分割ファイル* > 結合するファイル名
