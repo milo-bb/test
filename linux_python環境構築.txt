@@ -51,7 +51,7 @@ sudo -u postgres -i
 createuser -d -U postgres -P anonymous
 createdb vagrant --encoding=UTF-8 --lc-collate= en_US.UTF-8  --lc-ctype=en_US.UTF-8 --owner=vagrant --template=template0
 
-psql -U vagrant -h locahost -d vagrant
+psql -U vagrant -h localhost -d vagrant
 
 vagrantシャットダウン
 > vagrant halt
