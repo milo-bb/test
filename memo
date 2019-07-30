@@ -1,1 +1,9 @@
 
+1.sarコマンドでCPU使用率最大値とメモリ使用量の最大値確認
+ ■情報収集
+ sar -o sar_`date "+%Y%m%d%H%M%S"`.dat 1
+ ※1秒間情報を取得する
+ ■CPU最大値確認
+ sar -u -f datファイル | awk '{if(m<$3) m=$3} END{print m}' | awk '{printf("CPU使用率最大値：%3.2f%\n"),$1}'
+ ■メモリ最大値確認
+ sar -r -f datファイル | awk '{sum=$3-($5+$6)} END{print sum}' | awk '{if(m<$1) {m=$1}} END {print m}' | awk '{print $1/1024/1024}' | awk '{printf("メモリ使用量最大値：%3.1fG\n",$1)}'
