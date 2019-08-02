@@ -7,3 +7,30 @@
  sar -u -f datファイル | awk '{if(m<$3) m=$3} END{print m}' | awk '{printf("CPU使用率最大値：%3.2f%\n"),$1}'
  ■メモリ最大値確認
  sar -r -f datファイル | awk '{sum=$3-($5+$6)} END{print sum}' | awk '{if(m<$1) {m=$1}} END {print m}' | awk '{print $1/1024/1024}' | awk '{printf("メモリ使用量最大値：%3.1fG\n",$1)}'
+
+2.シェルで進捗バー作成
+ #!/bin/bash
+ b=''
+ i=0
+ while [ $i -le 100 ]
+ do
+  printf "progress:[%-50s]%d%%\r" $b $i
+  sleep 0.1
+  i=`expr 2 + $i`
+  b=-$b
+ done
+ 
+ #!/bin/bash
+ chars="／―＼|";
+ i=0
+ j=0
+ while [ $i -le 40 ]
+ do
+    sleep 0.1
+    if test $j -gt 3; then
+       j=0
+    fi
+    echo -en "Loading...${chars:$j:1}" "\r"
+    j=$((j+1))
+    i=$((i+1))
+ done
