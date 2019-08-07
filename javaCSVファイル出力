@@ -1,0 +1,72 @@
+PrintWriter pw = null;
+String fileStr = "";
+String fileNmStr = "";
+
+try {
+
+    StringBuilder fileNm = new StringBuilder();
+    fileNm.append(CSVファイルパス);
+    fileNm.append(CSVファイル名);
+
+    fileNmStr = fileNm.toString();
+
+    File f = new File(fileNmStr);
+
+    // ファイル存在チェック
+    if (!f.exists()) {
+        f.createNewFile();
+    }
+
+    // 出力用文字列作成
+    StringBuilder file = new StringBuilder();
+    file.append("\"");
+    file.append("テスト");
+    file.append("\"");
+
+    if (StringUtil.isBlank(データ配列)) {
+        
+            file.append(",");
+            file.append("\"");
+            file.append("テスト１");
+            file.append("\"");
+  
+        }
+        fileStr = file.toString();
+    } else {
+
+        String[] columns = データ配列.split("\t", -1);
+        file.append(",");
+        for (String col : columns) {
+            file.append("\"");
+            file.append(col);
+            file.append("\"");
+            file.append(",");
+        }
+
+        fileStr = file.toString();
+
+        if (fileStr.endsWith(",")) {
+            int last = fileStr.lastIndexOf(",");
+            fileStr = fileStr.substring(0, last);
+        }
+    }
+
+    // ファイルに出力
+    pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(
+            new FileOutputStream(f, true), "MS932")));
+    pw.write(fileStr);
+    pw.write("\r\n");
+
+} catch (Exception e) {
+    throw new NeoSarfException(e);
+} finally {
+    try {
+        if (pw != null) {
+            pw.close();
+        }
+    } catch (Exception e) {
+        // ログ出力
+        putLogERROR("コネクションのクローズでエラー発生しました。");
+
+    }
+}
