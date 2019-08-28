@@ -64,3 +64,9 @@
   nkf -sx -Lw --overwrite ファイル名
   utf-8、lfに変換する時
   nkf --ic=CP932 --oc=UTF-8 -Lu --overwrite ファイル名
+  
+5.linux ファイル作る時に、ファイル名を時間をつけたい場合
+  後ろに_`date +"%Y%m%d%H%M%S"`をつける
+
+6.Postgre何月差計算
+  SELECT (DATE_PART('year', '2012-01-01'::date) - DATE_PART('year', '2011-10-02'::date)) * 12 + (DATE_PART('month', '2012-01-01'::date) - DATE_PART('month', '2011-10-02'::date));
