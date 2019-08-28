@@ -56,7 +56,7 @@
   regexp_replace(カラム名,'.','●','g')
   regexp_replace(カラム名,'[^　]','●','g')
   空文字以外の場合変換する
-  regexp_replace(カラム名,'[^""].*','XXXXXX')
+  regexp_replace('test','.{1}.*','XXXXXX')
 
 4.Linuxで文字コード変換
   nkfコマンド
