@@ -70,3 +70,25 @@
 
 6.Postgre何月差計算
   SELECT (DATE_PART('year', '2012-01-01'::date) - DATE_PART('year', '2011-10-02'::date)) * 12 + (DATE_PART('month', '2012-01-01'::date) - DATE_PART('month', '2011-10-02'::date));
+7.linux正規表現
+  カタカナ検索
+  grep [ァ-ヴ] ファイル > 出力ファイル
+  半角カタカナ検索
+  grep [ｦ-ﾟ] ファイル > 出力ファイル
+  日本語検索
+  grep [\x01-\x7E] ファイル > 出力ファイル
+  ひらがな、カタカナ、漢字すべて検索
+  grep [ぁ-んァ-ヶ亜-熙０-１] ファイル > 出力ファイル
+  0バイトではない場合の調査
+  cut -f 45 test.txt | while read line; do if [ $((`echo $line | wc -m`-1)) -ne 0 ]; then echo $line; fi done;
+  改行を置換する
+  sed ':loop; N; $!b loop; ;s/\n//g'
+  トリム
+  `echo "$line" | awk 'gsub(/(^[ 　]*)/,"",$0)'`
+  `echo "$line" | awk 'gsub(/([ 　]*$)/,"",$0)'`
+  空文字置換処理を行う
+  sed -i -e 's/\^//g' ファイル
+ 
+ 8.-Tを指定するとパスを指定して、ディスク容量が足りないを防げる
+   sort -T -k1,1 ファイル > ソートファイル
+ 
