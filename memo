@@ -91,4 +91,5 @@
  
  8.-Tを指定するとパスを指定して、ディスク容量が足りないを防げる
    sort -T フルパス -k1,1 ファイル > ソートファイル
- 
+ 9.\copyについて
+   CSV DELIMITER E'\t' QUOTE AS E'\f' ESCAPE E'\\' NULL AS ''
