@@ -1,0 +1,17 @@
+リリースについて
+１．配布物件確認
+ tar tvf XXX.tar
+２．リリース物件現状確認(ある場合)
+ ls -l 現状の物件
+３．現状の物件バックアップ作成
+ tar cvf XXX_bak.tar 現状の物件
+４．バックアップ内容確認
+ tar tvf XXX_bak.tar
+５．リリース物件展開
+ tar xvf XXX.tar
+６．リリース物件確認
+ ls -l リリース物件
+７．md5sum確認
+ md5sum -c md5ファイル
+８．作業完成時間表示
+ date
