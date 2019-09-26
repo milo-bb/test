@@ -95,4 +95,4 @@
    ファイル出力の時後ろに以下を追加する
    WITH DELIMITER AS E'\t' CSV QUOTE '^' NULL AS ''
    ファイルを読み込む時後ろに以下を追加する
-   CSV DELIMITER E'\t' QUOTE AS E'^' ESCAPE E'\\' NULL AS ''
+   CSV DELIMITER E'\t' QUOTE AS E'^' NULL AS ''
