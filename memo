@@ -96,3 +96,11 @@
    WITH DELIMITER AS E'\t' CSV QUOTE '^' NULL AS ''
    ファイルを読み込む時後ろに以下を追加する
    CSV DELIMITER E'\t' QUOTE AS E'^' NULL AS ''
+  
+  10.シェル月末日判定
+  　if "`date -d 'YYYYMMDD 1 day' +%d`" == "01" then
+      set gymdate_dd = 99
+    else
+      set gymdate_dd  = `echo YYYYMMDD | cut -c7-`
+    endif
+  
