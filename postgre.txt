@@ -99,3 +99,7 @@ COMMENT ON COLUMN テーブル名.am IS '' ;
 
  ■シーケンス作成
  CREATE SEQUENCE sq_シーケンス名 INCREMENT 1 MINVALUE 1 MAXVALUE 99999999 START 1 CYCLE ;
+ 
+ ■インデックス作成
+ CREATE INDEX i0_テーブル名 ON テーブル名 ( カラム名 ) WITH (FILLFACTOR=90) TABLESPACE tsp_idx01 ;
+ 
