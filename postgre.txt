@@ -76,3 +76,23 @@ WHERE a.schemaname='スキーマ名'
   AND b.relowner != 10
   AND a.relname not like 'pg_%'
 ORDER BY dead_ratio DESC;
+
+■テーブル作成
+DROP TABLE テーブル名 CASCADE ;
+CREATE TABLE テーブル名 (
+	id                         	VARCHAR(16),
+	nm                  	VARCHAR(30) NOT NULL,
+	dt                       	TIMESTAMP NOT NULL,
+	am                   	NUMERIC(10,0) NOT NULL,
+CONSTRAINT pk_テーブル名 PRIMARY KEY ( id )
+WITH (FILLFACTOR=90) 
+USING INDEX TABLESPACE tsp_idx01
+) WITH (FILLFACTOR=90) TABLESPACE tsp_tbl01 ;
+
+COMMENT ON TABLE テーブル名 IS '';
+COMMENT ON COLUMN テーブル名.id IS '' ;
+COMMENT ON COLUMN テーブル名.nm IS '' ;
+COMMENT ON COLUMN テーブル名.dt IS '' ;
+COMMENT ON COLUMN テーブル名.am IS '' ;
+
+\d+ テーブル名
