@@ -104,3 +104,12 @@
       set gymdate_dd  = `echo YYYYMMDD | cut -c7-`
     endif
   
+  11.ディレクトリごとMD5値出力コマンド
+    find ディレクトリ -type f -exec md5sum {} \;
+  
+  12.ファイル検索、コピー
+  　find ./ -maxdepth 1 -mindepth 1 -type f -name "test*" | sort | head -n 2 | xargs -i cp -p {} /tmp/
+  
+  13.シェルパス抜きファイル名取得
+　　　set LOOP_FILE_NAME = ${FILE_NAME_2:t}
+  
