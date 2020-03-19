@@ -57,6 +57,10 @@
   regexp_replace(カラム名,'[^　]','●','g')
   空文字以外の場合変換する
   regexp_replace('test','.{1}.*','XXXXXX')
+  禁則文字
+  similar to '%[''"\\\\<>]%'
+  半角以外
+  similar to '%[^ -~｡-ﾟ]%'
 
 4.Linuxで文字コード変換
   nkfコマンド
