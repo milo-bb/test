@@ -19,7 +19,7 @@
      *            行文字列
      * @return スプリット結果の文字配列
      */
-    public String[] splitLineWithComma(String line) throws NeoSarfException {
+    public String[] splitLineWithComma(String line) throws Exception {
         // 分割後の文字列配列
         String[] arr = null;
 
