@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>{{ username }}さん紹介</h1>
+<div id="desc">
+    {% if age < 20 %}
+        <p>年齢は、{{ age }}才(未成年)です。</p>
+        <p>連絡先は非公開です。</p>
+    {%  else %}
+        <p>年齢は、{{ age }}才です。</p>
+        <p>メールアドレスは、{{ email }}です。</p>
+        <p>こんにちは。</p>
+    {% endif %}
+</body>
+</html>
