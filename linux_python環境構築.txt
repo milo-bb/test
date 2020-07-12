@@ -1,8 +1,10 @@
 virtualBoxをダウンロードとインストール
 https://www.virtualBox.org/
+virtualBox 5.2.42
 
 vagrantをダウンロードとインストール
 https://www/vagrantup.com/
+Vagrant 2.2.9
 
 > vagrant init bento/ubuntu-18.04
 > vagrant up
