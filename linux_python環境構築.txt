@@ -25,6 +25,13 @@ vagrant@vagrant:~$ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 vagrant@vagrant:~$ echo 'fi' >> ~/.bashrc
 vagrant@vagrant:~$ source ~/.bashrc
 
+pyenvを利用して任意バージョンのpythonをインストール
+vagrant@vagrant:~$ pyenv install 3.8.0
+vagrant@vagrant:~$ pyenv global 3.8.0
+
+pythonバージョン確認
+vagrant@vagrant:~$ pyenv --version
+
 pyenvを利用してAnacondaをインストール
 vagrant@vagrant:~$ pyenv install anaconda3-5.2.0
 vagrant@vagrant:~$ pyenv global anaconda3-5.2.0
