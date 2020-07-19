@@ -17,6 +17,8 @@ vagrant
 必要なライブラリインストール
 vagrant@vagrant:~$ sudo apt-get update
 vagrant@vagrant:~$ sudo apt-get install git gcc make openssl libssl-dev libbz2-dev libreadline-dev libsqlite3-dev
+vagrant@vagrant:~$ sudo apt-get install zlib1g-dev liblzma-dev libbz2-dev libreadline-dev
+vagrant@vagrant:~$ sudo apt-get install build-essential python-dev libffi-dev
 
 pyenvインストール
 vagrant@vagrant:~$ git clone https://github.com/yyuu/pyenv.git ~/.pyenv
@@ -34,13 +36,16 @@ vagrant@vagrant:~$ pyenv global 3.8.0
 pythonバージョン確認
 vagrant@vagrant:~$ pyenv --version
 
+パージョン切り替えできない場合
+vagrant@vagrant:~$ eval "$(pyenv init -)"
+vagrant@vagrant:~$ pyenv --version
+
 pyenvを利用してAnacondaをインストール
 vagrant@vagrant:~$ pyenv install anaconda3-5.2.0
 vagrant@vagrant:~$ pyenv global anaconda3-5.2.0
 
 pipバージョンアップ
 vagrant@vagrant:~$ pip install --upgrade pip
-
 
 タイムゾーン変更
 https://qiita.com/azusanakano/items/b39bd22504313884a7c3
