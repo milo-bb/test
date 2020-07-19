@@ -40,10 +40,6 @@ vagrant@vagrant:~$ pyenv --version
 vagrant@vagrant:~$ eval "$(pyenv init -)"
 vagrant@vagrant:~$ pyenv --version
 
-pyenvを利用してAnacondaをインストール
-vagrant@vagrant:~$ pyenv install anaconda3-5.2.0
-vagrant@vagrant:~$ pyenv global anaconda3-5.2.0
-
 pipバージョンアップ
 vagrant@vagrant:~$ pip install --upgrade pip
 
