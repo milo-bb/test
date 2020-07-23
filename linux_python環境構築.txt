@@ -34,7 +34,7 @@ vagrant@vagrant:~$ pyenv install 3.8.0
 vagrant@vagrant:~$ pyenv global 3.8.0
 
 pythonバージョン確認
-vagrant@vagrant:~$ pyenv --version
+vagrant@vagrant:~$ python --version
 
 パージョン切り替えできない場合
 vagrant@vagrant:~$ eval "$(pyenv init -)"
