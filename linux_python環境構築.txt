@@ -46,6 +46,26 @@ vagrant@vagrant:~$ pip install --upgrade pip
 タイムゾーン変更
 https://qiita.com/azusanakano/items/b39bd22504313884a7c3
 
+新規開発ユーザー作成
+root@vagrant# useradd testuser
+
+開発ユーザーパスワード設定
+root@vagrant# passwd testuser
+
+sudo権限付
+root@vagrant# gpasswd -a testuser sudo
+
+sshd_configの設定
+root@vagrant# vi /etc/ssh/sshd_config
+PasswordAuthenticationを『yes』に変更して保存。
+
+パスワードなしでsudoを実行する場合
+root@vagrant# visudo
+testuser   ALL = NOPASSWD:ALL
+
+sshdサービス再起動
+root@vagrant# service sshd restart
+
 
 postgresqlインストール
 sudo apt-get install curl ca-certificates
