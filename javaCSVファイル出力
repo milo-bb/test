@@ -58,7 +58,7 @@ try {
     pw.write("\r\n");
 
 } catch (Exception e) {
-    throw new NeoSarfException(e);
+    throw new Exception(e);
 } finally {
     try {
         if (pw != null) {
